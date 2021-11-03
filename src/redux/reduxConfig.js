@@ -1,12 +1,13 @@
 import * as actions from "./actionTypes"
-const reducer = (state = 1, action) => {
+// import store from "./Store";
 
-  if(action.type === actions.INCREMENT){
-    state+=1
-  }
-  else if(action.type === actions.DECREMENT){
-    state-=1
-  }
+const reducer = (state = [], action) => {
+ if(action.type === actions.SEARCH){
+  return action.payload 
+}
+else if (action.type === actions.INTIAL_DATA){
+  
+}
 
  return state
 }

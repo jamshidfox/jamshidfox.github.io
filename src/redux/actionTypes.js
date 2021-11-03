@@ -1,2 +1,2 @@
-export const INCREMENT = 'increment';
-export const DECREMENT = 'decrement';
+export const SEARCH = 'search'
+export const INTIAL_DATA = 'inital_data'

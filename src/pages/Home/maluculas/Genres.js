@@ -17,7 +17,11 @@ import { useEffect, useState } from "react"
 import { Search, Music } from "react-feather"
 import {Link} from "react-router-dom"
 import axios from "axios"
-const Sidebar = () => {
+//redux
+import store from "../../../redux/Store"
+
+
+const Sidebar = ()  => {
    const [dropdownOpenJanr, setDropdownOpen] = useState(false);
    const [dropdownOpenLenguage, setDropdownOpenLenguage] = useState(false);
    const [data, setData] = useState(0)
@@ -26,20 +30,39 @@ const Sidebar = () => {
 
    const toggle = () => setDropdownOpen(prevState => !prevState);
    const toggle2 = () => setDropdownOpenLenguage(prevState => !prevState);
+
    //////Axios get Data
    useEffect(() => {
     axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=a06703a3a956c84f212f678361ef4431&language=en-US")
     .then(data => setData(data))
-    },[]);
+    },[]); 
     /////Events
     const handleSearch = () => {
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a06703a3a956c84f212f678361ef4431&language=en-US&include_adult=false&query=${searchedData}`)
-        .then((data) => console.log(data.data))
+        .then((data) => 
+        store.dispatch({
+            type: 'search',
+            payload: [data.data]
+        }))       
     }
     const handleChangeInput = (e) => {
        const text = e.target.value
        setsearchedData(text)
     }
+
+    // useEffect(()=>{
+    //     search(searchText,count)
+    // },[count])
+
+    // search=async(searchText,count=1)=>{
+    //     try{
+    //         const data=await axios.get(`/url?q=${searchText}&page=${count}`)
+    //         // set state there
+    //     }catch(e){
+    //         //  handle error
+    //     }
+    // }
+    
     
      if(data !== 0){
         return ( 
@@ -49,8 +72,8 @@ const Sidebar = () => {
                            <Col sm = '10'>
                                <Input type = "search" placeholder = "Поиск" value={searchedData} onChange={(e) => handleChangeInput(e)}/>
                            </Col>
-                           <Col sm = "1">
-                               <Search size = {12} onClick={() => handleSearch()} />
+                           <Col sm = "2" className='d-flex align-items-center'>
+                               <Search id = 'searchButton'size = {20} onClick={() => handleSearch()} />
                            </Col>
                     </Row>
                     <Row>

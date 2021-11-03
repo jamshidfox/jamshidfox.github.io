@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Card, CardBody, CardImg, CardTitle, CardText, Row, Col } from "reactstrap";
 import CustomTable from "./maluculas/test"
 import axios from "axios";
+import store from "../../redux/Store"
+
 const Home = () => {
     const [data, setData]= useState(0)
     const [count, setCount]= useState(1)
@@ -10,6 +12,7 @@ const Home = () => {
         .then(data => setData(data))
         },[count]);
         const ImgUrl = "https://image.tmdb.org/t/p/w500"
+        console.log(store.getState())
         if(data){
             return (    
                 <Row>
@@ -25,7 +28,6 @@ const Home = () => {
                             <CardText>
                             Vote: {d.vote_average}
                             </CardText>
-                            
                         </CardBody>
                         </Card>
                   </Col>
