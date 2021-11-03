@@ -1,0 +1,18 @@
+#toby{
+    background-image: url(/src/assets/background-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cardId {
+height: 300px;
+width: 25%;
+background-color: transparent;
+box-shadow: 5em;
+}
+
+#cardLabel {
+    height: 300px;
+    width: 8%;
+    box-shadow: 5em;
+}
