@@ -1,31 +1,28 @@
-import React from 'react'
-import Routing from "./route/Route"
-import Navbar from './pages/Navbar/navbar'
-import Sidebar from "./pages/Sidebar/sidebar"
-import {Row, Col} from "reactstrap"
-
-
+import React from 'react';
+import Routing from './route/Route';
+import Navbar from './pages/Navbar/navbar';
+import Sidebar from './pages/Sidebar/sidebar';
+import { Row, Col } from 'reactstrap';
+import './App.css';
 function App() {
-return (
-    <div>
+  return (
+    <div id="app-container">
       <Row>
-          <Col sm = '12'>
-            <Navbar/>
-          </Col> 
+        <Col sm="12">
+          <Navbar />
+        </Col>
       </Row>
-        <Row>
-            <Col sm = '10'>
-                <Routing />
-              </Col>
-            <Col sm = '2'>
-               <Sidebar />
-            </Col>
+      <Row>
+        <Col sm="10">
+          <Routing />
+        </Col>
+        <Col sm="2">
+          <Sidebar />
+        </Col>
       </Row>
-      </div>
-  // <ValidationOnChange />  
-  
-    );
-   
+    </div>
+    // <ValidationOnChange />
+  );
 }
 // Jamshidbek Kobilov
 
