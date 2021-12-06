@@ -1,7 +1,7 @@
 import Genres from '../Home/maluculas/Genres';
 const Sidebar = () => {
   return (
-    <div>
+    <div style={{ margin: '0.5rem' }}>
       <Genres />
     </div>
   );

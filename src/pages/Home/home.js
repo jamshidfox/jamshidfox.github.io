@@ -35,7 +35,21 @@ const Home = () => {
       </Row>
     );
   } else {
-    return 0;
+    return (
+      <div
+        style={{ height: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <h1
+          style={{
+            WebkitBoxShadow: '4px 8px 15px 11px rgba(34, 60, 80, 0.2)',
+            MozBoxShadow: '4px 8px 15px 11px rgba(34, 60, 80, 0.2)',
+            boxShadow: '4px 8px 15px 11px rgba(34, 60, 80, 0.2)',
+          }}
+        >
+          404 Not Found
+        </h1>
+      </div>
+    );
   }
 };
 

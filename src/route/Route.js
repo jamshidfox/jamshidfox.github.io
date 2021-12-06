@@ -11,8 +11,10 @@ import Search from '../pages/Home/maluculas/SearchedMovie';
 const Routing = () => {
   return (
     <Card
-      className="mt-4"
-      style={{ boxShadow: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)' }}
+      style={{
+        boxShadow: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
+        margin: '0.5rem',
+      }}
     >
       <CardBody>
         <Switch>
