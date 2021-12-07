@@ -9,9 +9,8 @@ const Navbar = () => {
         WebkitBoxShadow: '-3px 8px 8px 0px rgba(34, 60, 80, 0.2)',
         MozBoxShadow: '-3px 8px 8px 0px rgba(34, 60, 80, 0.2)',
         boxShadow: '-3px 8px 8px 0px rgba(34, 60, 80, 0.2)',
-        background: 'rgb(2,0,36)',
         background:
-          'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,128,1) 37%, rgba(35,132,152,1) 99%)',
+          'rgb(2,0,36) linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,128,1) 37%, rgba(35,132,152,1) 99%)',
       }}
     >
       <CardBody>

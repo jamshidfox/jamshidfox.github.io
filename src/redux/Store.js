@@ -1,6 +1,8 @@
-import { createStore } from "redux";
-import reducer from "../redux/reduxConfig";
+import { configureStore } from '@reduxjs/toolkit';
+import authentificationReducer from './features/authentification/authSlice';
 
-const store = createStore(reducer);
-
-export default store;
+export default configureStore({
+  reducer: {
+    isAuthorized: authentificationReducer,
+  },
+});

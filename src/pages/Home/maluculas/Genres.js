@@ -110,9 +110,9 @@ const Sidebar = () => {
                     <CardBody>
                       <Row xs="2">
                         <Col>
-                          <Link>English</Link>
-                          <Link>Russian</Link>
-                          <Link>Uzbek</Link>
+                          <Link to="/#">English</Link>
+                          <Link to="/#">Russian</Link>
+                          <Link to="/#">Uzbek</Link>
                         </Col>
                       </Row>
                     </CardBody>

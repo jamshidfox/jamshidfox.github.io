@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const Search = () => {
-  const ImgUrl = 'https://image.tmdb.org/t/p/w500';
+  // const ImgUrl = 'https://image.tmdb.org/t/p/w500';
   const [searchData, SetSearchData] = useState(0);
 
   useEffect(() => {
