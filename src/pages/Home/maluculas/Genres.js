@@ -14,8 +14,18 @@ const Sidebar = () => {
   const [data, setData] = useState(0);
   const [searchedData, setsearchedData] = useState('');
 
-  const handleGenresBtn = () => setGenresBtn((prevState) => !prevState);
-  const handleLanguagesBtn = () => setLanguagesBtn((prevState) => !prevState);
+  const handleGenresBtn = () => {
+    if (languagesBtn == true) {
+      setLanguagesBtn(false);
+    }
+    setGenresBtn((prevState) => !prevState);
+  };
+  const handleLanguagesBtn = () => {
+    if (genresBtn == true) {
+      setGenresBtn(false);
+    }
+    setLanguagesBtn((prevState) => !prevState);
+  };
 
   //////Axios get Data
   useEffect(() => {
@@ -62,7 +72,7 @@ const Sidebar = () => {
           </Row>
           <Row>
             <Col className="mt-3">
-              <div>
+              <div className="d-flex justify-content-between mt-1">
                 <Button
                   color="primary"
                   onClick={() => handleGenresBtn()}
@@ -70,6 +80,15 @@ const Sidebar = () => {
                 >
                   Жанры
                 </Button>
+                <Button
+                  color="primary"
+                  onClick={() => handleLanguagesBtn()}
+                  style={{ marginBottom: '1rem' }}
+                >
+                  Языки
+                </Button>
+              </div>
+              <div>
                 <Collapse isOpen={genresBtn}>
                   <Card>
                     <CardBody>
@@ -86,29 +105,20 @@ const Sidebar = () => {
                     </CardBody>
                   </Card>
                 </Collapse>
+                <Collapse isOpen={languagesBtn}>
+                  <Card>
+                    <CardBody>
+                      <Row xs="2">
+                        <Col>
+                          <Link>English</Link>
+                          <Link>Russian</Link>
+                          <Link>Uzbek</Link>
+                        </Col>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Collapse>
               </div>
-            </Col>
-            <Col className="mt-3">
-              <Button
-                color="primary"
-                onClick={() => handleLanguagesBtn()}
-                style={{ marginBottom: '1rem' }}
-              >
-                Языки
-              </Button>
-              <Collapse isOpen={languagesBtn}>
-                <Card>
-                  <CardBody>
-                    <Row xs="2">
-                      <Col>
-                        <Link>English</Link>
-                        <Link>Russian</Link>
-                        <Link>Uzbek</Link>
-                      </Col>
-                    </Row>
-                  </CardBody>
-                </Card>
-              </Collapse>
             </Col>
           </Row>
           <Row>

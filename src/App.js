@@ -3,11 +3,12 @@ import Routing from './route/Route';
 import Navbar from './pages/Navbar/navbar';
 import Sidebar from './pages/Sidebar/sidebar';
 import { Row, Col } from 'reactstrap';
+import Login from './pages/login/login';
 import './App.css';
 function App() {
   return (
     <div id="app-container">
-      <Row>
+      {/* <Row>
         <Col sm="12">
           <Navbar />
         </Col>
@@ -19,7 +20,8 @@ function App() {
         <Col sm="2">
           <Sidebar />
         </Col>
-      </Row>
+      </Row> */}
+      <Login />
     </div>
     // <ValidationOnChange />
   );
